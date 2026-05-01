@@ -1,0 +1,38 @@
+Part C — Autonomous multi-agent deployment (block diagram notes for your report)
+
+Goal: show distinct agents, secure channels, and classical security controls (encryption, authentication, access control, secure protocols).
+
+Recommended agents (each box is autonomous with a narrow responsibility):
+1) Ingest / Telemetry Agent — collects network and device telemetry; mutual TLS to brokers.
+2) Preprocessing Agent — normalization, deduplication, feature extraction; signs output bundles.
+3) Poisoning / Data-integrity Agent — statistical shift tests, label-noise monitors, consensus checks vs golden statistics.
+4) Training Orchestrator Agent — schedules training jobs; enforces RBAC on datasets and code repos; uses hardware-backed keys.
+5) Model Registry Agent — stores versioned models; code signing; release approvals via policy engine.
+6) Inference / IDS Agent — edge scoring; model attestation before load; rate limits and circuit breakers.
+7) Drift / Performance Agent — tracks PR-AUC/F1 drift, population shift; triggers rollback.
+8) Incident Response Agent — isolates segments, rotates credentials, quarantines poisoned batches.
+9) Health / Observability Agent — metrics, tamper-evident logs, SIEM export.
+10) Update / Sanitary Agent — staged canary rollout, automated regression tests on fixed holdout.
+
+Communication pattern (secure coordination):
+- All inter-agent RPC over mTLS (e.g., gRPC) with short-lived tokens (OAuth2 client credentials) and mTLS cert pinning.
+- Message bus (e.g., MQTT/Kafka) uses TLS 1.3, ACLs per topic, and authenticated publishers.
+- Secrets from HSM/Vault; keys rotated; least-privilege service accounts.
+- Mutual authentication between agents; attribute-based access control for datasets containing labels.
+- Audit log chain (append-only) forwarded to SIEM; intrusion monitoring on management plane.
+
+Mermaid (paste into editors that support Mermaid, e.g., some Markdown renderers):
+
+flowchart LR
+  T[Telemetry] -->|mTLS| P[Preprocessor]
+  P -->|signed batches| D[Poisoning Detector]
+  D -->|cleaned dataset| O[Training Orchestrator]
+  O -->|RBAC + signed job| R[Model Registry]
+  R -->|attested package| I[Edge IDS Inference]
+  I -->|scores| M[Drift Monitor]
+  M -->|rollback / alert| U[Update Manager]
+  M --> H[Health & Logging]
+  D --> IR[Incident Response]
+  IR --> P
+
+Edge legend: dashed policies = access control; solid = encrypted channels; each hop requires mutual authentication.
