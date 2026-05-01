@@ -1,0 +1,8 @@
+{
+  "best_model": "hist_gradient_boosting",
+  "benign_class": "Benign",
+  "n_features": 6,
+  "n_train": 400,
+  "n_test": 100,
+  "n_classes": 3
+}
