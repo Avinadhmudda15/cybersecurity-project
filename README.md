@@ -94,12 +94,5 @@ Outputs are written to `outputs/labs/` (e.g. `week1_split_shapes.txt`, `week4_mn
 | **Part D** | `lab_logbook.txt` template; paste `outputs/` figures and your **GitHub / OneDrive** code link. |
 | **Formal report (Word/PDF)** | You still write the **marked report** yourself: Part A must be **model choice + experimental rationale + results only** (no introduction, literature survey, or conclusions, per brief). Use `Report_File.txt` as a technical companion, not as the final report. |
 
-## Citation (required for academic use)
 
-Mohamed Amine Ferrag, Othmane Friha, Djallel Hamouda, Leandros Maglaras, Helge Janicke, “Edge-IIoTset: A New Comprehensive Realistic Cyber Security Dataset of IoT and IIoT Applications for Centralized and Federated Learning,” *IEEE Access*, 2022, DOI: [10.1109/ACCESS.2022.3165809](https://doi.org/10.1109/ACCESS.2022.3165809).
 
-Dataset DOI: [10.21227/mbc1-1h68](https://doi.org/10.21227/mbc1-1h68).
-
-## AI tools (module policy)
-
-This project is consistent with **Category Two** (AI as an independent research/coding aid). Declare use according to your institution’s rules. ARU resource: [AI tools libguide](https://anglia.libguides.com/AI/).
