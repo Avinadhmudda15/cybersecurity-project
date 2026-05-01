@@ -1,0 +1,1 @@
+Week -2 Case study on Cyber-attacks (Twitter Bitcoin Scam, 2020): Attackers gained access to high-profile Twitter accounts and used them to promote a Bitcoin scam. Fake posts promised doubled returns; many users sent funds before Twitter intervened. The incident highlighted risks of centralized account recovery and weak internal controls.

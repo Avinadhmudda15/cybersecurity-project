@@ -1,0 +1,2 @@
+Clean test accuracy (subset): 0.900
+Adversarial test accuracy (FGSM, same subset): 0.000

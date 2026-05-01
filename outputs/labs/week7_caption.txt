@@ -1,0 +1,2 @@
+DES stands for Data Encryption Standard. AES stands for Advanced Encryption Standard.
+ECB mode encrypts each block independently; patterns in the plaintext can leak into the ciphertext.

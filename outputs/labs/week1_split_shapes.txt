@@ -1,0 +1,3 @@
+Training Set: (1400, 2) (1400,)
+Validation Set: (300, 2) (300,)
+Testing Set: (300, 2) (300,)
